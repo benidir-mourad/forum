@@ -1,0 +1,41 @@
+nav {
+    width: 250px;
+    height: calc(100vh - 100px);
+}
+
+nav .add_question_btn {
+    background-color: #2d69cf;
+    color : #fff;
+    outline : none;
+    border: none;
+    padding: 15px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 5px 0px #c2c2c2;
+    width: 100%;
+    cursor: pointer;
+}
+
+nav.widescreen-nav ul {
+    width: 100%;
+    margin: 100px 0 10px 10px;
+    box-shadow: 2px 1px 13px 0px #8b8a8b;
+    border-radius: 10px;
+}
+
+nav.widescreen-nav ul li.menu_item {
+    list-style-type: none;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+}
+
+nav.widescreen-nav ul li.menu_item .menu_icon {
+    margin-right: 10px;
+}
+
+nav.widescreen-nav ul li:hover {
+    background-color: #18366a;
+}

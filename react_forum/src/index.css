@@ -11,3 +11,9 @@ body {
     background-color: #f8f8f9;
     height: 100vh;
 }
+
+main {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+}
