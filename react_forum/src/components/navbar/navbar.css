@@ -39,3 +39,8 @@ nav.widescreen-nav ul li.menu_item .menu_icon {
 nav.widescreen-nav ul li:hover {
     background-color: #18366a;
 }
+
+nav ul li.menu_item.active {
+    background-color: #18366a85;
+    color: #fff;
+}

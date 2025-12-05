@@ -1,8 +1,17 @@
-import React from 'react'
-import { EditOutlined, FileOutlined, PlusOutlined, QuestionOutlined } from '@ant-design/icons'
+import React, { useState } from 'react'
+import { PlusOutlined } from '@ant-design/icons'
 import './navbar.css'
+import { menuItem } from '../../data'
 
 const Navbar = () => {
+
+    const [isItemClicked, setItemClicked] = useState(null);
+
+    const handleMenuItemClicked = (item) => {
+        setItemClicked(item.id);
+        console.log(item.id);
+    }
+
     return (
         <div>
             <nav className='widescreen-nav'>
@@ -12,24 +21,20 @@ const Navbar = () => {
                         Poser une question
                     </li>
 
-                    <li className='menu_item'>
-                        <div className='menu_icon'><QuestionOutlined /></div>
-                        <div className='menu_title'>Toutes les questions</div>
-                    </li>
-
-                    <li className='menu_item'>
-                        <div className='menu_icon'><FileOutlined /></div>
-                        <div className='menu_title'>Mes questions</div>
-                    </li>
-
-                    <li className='menu_item'>
-                        <div className='menu_icon'><EditOutlined /></div>
-                        <div className='menu_title'>Mes réponses</div>
-                    </li>
-
+                    {
+                        menuItem.map((item) => (
+                            <li className={isItemClicked == item.id ? 'menu_item active' : 'menu_item'}
+                                key={item.id}
+                                onClick={() => handleMenuItemClicked(item)
+                                }>
+                                <div className='menu_icon'>{item.icon}</div>
+                                <div className='menu_title'>{item.title}</div>
+                            </li>
+                        ))
+                    }
                 </ul>
             </nav>
-        </div>
+        </div >
     )
 }
 
