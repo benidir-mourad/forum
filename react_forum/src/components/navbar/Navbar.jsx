@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { PlusOutlined } from '@ant-design/icons'
 import './navbar.css'
 import { menuItem } from '../../data'
@@ -8,6 +8,8 @@ const Navbar = () => {
 
     const [isItemClicked, setItemClicked] = useState(null);
     const [openAddQuestionModal, setOpenAddQuestionModal] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
 
     const handleMenuItemClicked = (item) => {
         setItemClicked(item.id);
@@ -18,8 +20,22 @@ const Navbar = () => {
         setOpenAddQuestionModal(true);
     }
 
+    useEffect(() => {
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions)
+
+        return () => {
+            window.removeEventListener('resize', updateDimensions)
+        }
+    }, [])
+
+    const updateDimensions = () => {
+        setIsMobile(window.innerWidth <= 620)
+    }
+
+
     return (
-        <nav className='widescreen-nav'>
+        <nav className='mobile_nav'>
             <ul>
                 <li className='add_question_btn' onClick={handleOpenModal}>
                     <PlusOutlined />
@@ -38,7 +54,7 @@ const Navbar = () => {
                     ))
                 }
             </ul>
-            <AddQuestionModal open={openAddQuestionModal} setOpen={setOpenAddQuestionModal}/>
+            <AddQuestionModal open={openAddQuestionModal} setOpen={setOpenAddQuestionModal} />
         </nav>
     )
 }

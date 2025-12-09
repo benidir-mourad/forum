@@ -7,6 +7,9 @@ const AddQuestionModal = ({open, setOpen}) => {
     const onFinish = (values) => {
         console.log(values);
     }
+
+
+
     return (
         <Modal
             title='Ajouter une question'
