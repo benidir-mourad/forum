@@ -35,7 +35,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className='mobile_nav'>
+        <nav className={isMobile ? 'mobile_nav' : 'widescreen_nav' }>
             <ul>
                 <li className='add_question_btn' onClick={handleOpenModal}>
                     <PlusOutlined />

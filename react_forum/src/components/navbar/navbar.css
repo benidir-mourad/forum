@@ -16,14 +16,14 @@ nav .add_question_btn {
     cursor: pointer;
 }
 
-nav.widescreen-nav ul {
+nav.widescreen_nav ul {
     width: 100%;
     margin: 100px 0 10px 10px;
     box-shadow: 2px 1px 13px 0px #8b8a8b;
     border-radius: 10px;
 }
 
-nav.widescreen-nav ul li.menu_item {
+nav.widescreen_nav ul li.menu_item {
     list-style-type: none;
     margin: 10px 0;
     cursor: pointer;
@@ -32,11 +32,11 @@ nav.widescreen-nav ul li.menu_item {
     align-items: center;
 }
 
-nav.widescreen-nav ul li.menu_item .menu_icon {
+nav.widescreen_nav ul li.menu_item .menu_icon {
     margin-right: 10px;
 }
 
-nav.widescreen-nav ul li:hover {
+nav.widescreen_nav ul li:hover {
     background-color: #18366a;
 }
 
@@ -73,4 +73,8 @@ nav.mobile_nav ul li.menu_item {
 nav.mobile_nav ul li.menu_item:hover {
     background-color: #18366a85;
     color: #fff;
+}
+
+nav.mobile_nav .add_question_btn {
+    margin-top: 20px;
 }
