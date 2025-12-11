@@ -1,6 +1,7 @@
 import profil from '../../assets/sharingan.png'
 import { Button } from 'antd'
 import { EditOutlined } from '@ant-design/icons'
+import './feedCard.css' 
 
 const FeedCard = () => {
     return (
