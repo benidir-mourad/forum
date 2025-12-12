@@ -31,3 +31,7 @@ article.feed .card_bottom {
     display: flex;
     align-items: center;
 }
+
+.response_form {
+    width: 80%;
+}
