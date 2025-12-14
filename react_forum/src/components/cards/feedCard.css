@@ -35,3 +35,9 @@ article.feed .card_bottom {
 .response_form {
     width: 80%;
 }
+
+.response_list {
+    width: 80%;
+    padding: 0 50px;
+    margin: 20px 0;
+}

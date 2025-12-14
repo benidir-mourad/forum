@@ -3,12 +3,14 @@ import profil from '../../assets/sharingan.png'
 import { Button, Form, Input } from 'antd'
 import { EditOutlined } from '@ant-design/icons'
 import './feedCard.css'
+import ResponseCard from './ResponseCard'
 
-const FeedCard = ({item}) => {
+const FeedCard = ({ item }) => {
 
     const [form] = Form.useForm();
     const [clickResponse, setClickResponse] = useState(false);
     const [selectedQuestionId, setSelectedQuestionId] = useState(null);
+    const [clickResponseList, setClickResponseList] = useState(false);
 
     const onFinish = (values) => {
         console.log(values);
@@ -17,6 +19,11 @@ const FeedCard = ({item}) => {
     const showResponseForm = (id) => {
         setSelectedQuestionId(id);
         setClickResponse(!clickResponse);
+    }
+
+    const showResponseList = (id) => {
+        setSelectedQuestionId(id);
+        setClickResponseList(!clickResponseList);
     }
 
     return (
@@ -39,7 +46,7 @@ const FeedCard = ({item}) => {
                         <span>Répondre</span>
                     </Button>
 
-                    <Button type='link'>
+                    <Button type='link' onClick={() => showResponseList(item.id)}>
                         12 personnes ont répondu
                     </Button>
                 </div>
@@ -68,6 +75,18 @@ const FeedCard = ({item}) => {
                     </div>
                 )
             }
+
+            {
+                selectedQuestionId == item.id && clickResponseList == true && (
+                    <div className='response_list'>
+                        <ResponseCard />
+                        <ResponseCard />
+                        <ResponseCard />
+
+                    </div>
+                )
+            }
+
         </>
     )
 }
