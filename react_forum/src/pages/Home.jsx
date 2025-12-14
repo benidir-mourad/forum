@@ -1,4 +1,3 @@
-import React from 'react'
 import './home.css'
 import FeedCard from '../components/cards/FeedCard'
 import { questions } from '../data'
