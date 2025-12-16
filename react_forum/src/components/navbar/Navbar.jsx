@@ -3,17 +3,19 @@ import { PlusOutlined } from '@ant-design/icons'
 import './navbar.css'
 import { menuItem } from '../../data'
 import AddQuestionModal from '../modals/AddQuestionModal'
+import {useNavigate} from 'react-router-dom'
 
 const Navbar = () => {
 
     const [isItemClicked, setItemClicked] = useState(null);
     const [openAddQuestionModal, setOpenAddQuestionModal] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const navigate = useNavigate();
 
 
     const handleMenuItemClicked = (item) => {
         setItemClicked(item.id);
-        console.log(item.id);
+        navigate(item.path);
     }
 
     const handleOpenModal = () => {

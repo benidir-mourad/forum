@@ -12,14 +12,14 @@ export const menuItem = [
         id: 2,
         title: 'Mes questions',
         icon: <FileOutlined />,
-        path: '/questions'
+        path: '/question'
     },
 
     {
         id: 3,
         title: 'Mes réponses',
         icon: <EditOutlined />,
-        path: '/reponses'
+        path: '/response'
     }
 ]
 
