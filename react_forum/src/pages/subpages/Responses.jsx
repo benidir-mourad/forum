@@ -1,8 +1,12 @@
+import ResponseCard from "../../components/cards/ResponseCard"
+
 const Responses = () => {
   return (
-    <div>
-      <p>Page des réponses</p>
-    </div>
+    <section className='feed_page'>
+      <ResponseCard />
+      <ResponseCard />
+      <ResponseCard />
+    </section>
   )
 }
 
